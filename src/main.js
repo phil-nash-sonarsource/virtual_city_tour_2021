@@ -23,3 +23,15 @@ function redirection(req, res) {
 
   res.redirect(url); // Noncompliant
 }
+
+// https://rules.sonarsource.com/javascript/RSPEC-5131
+function anotherNonCompliantCode(req, res){
+  const tainted = req.query.name;
+  res.send(tainted); // Noncompliant
+}
+
+// https://rules.sonarsource.com/javascript/RSPEC-5131
+function YetAnotherNonCompliantCode(req, res){
+  const tainted = req.query.name;
+  res.send(tainted); // Noncompliant
+}
